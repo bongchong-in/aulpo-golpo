@@ -63,11 +63,11 @@ export const EPILOGUE_DATA = {
   title: "Let's write the next chapter.",
   description: "Interested in collaborations or just want to say hello? \nI'm always looking for new stories to tell.",
   emailLabel: 'Email Me',
-  emailUrl: 'mailto:hello@aulpogolpo.com',
+  emailUrl: 'mailto:c.shreoshree@gmail.com',
   instagramLabel: 'Instagram',
   instagramUrl: 'https://instagram.com/aulpo_golpo',
   whatsappLabel: 'WhatsApp',
-  whatsappUrl: 'https://wa.me/1234567890',
+  whatsappUrl: 'https://wa.me/917982813208',
   copyright: '© 2025 Aulpo Golpo. All rights reserved.',
   bengaliFooter: 'ছোট গল্প, বড় স্মৃতি'
 };

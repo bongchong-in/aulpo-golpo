@@ -34,6 +34,10 @@ const Epilogue: React.FC = () => {
                 {epilogue.copyright}<br />
                 <span className="font-bengali">{epilogue.bengaliFooter}</span>
             </div>
+
+            <div className="mt-6 opacity-30 text-[10px] tracking-widest uppercase">
+                Developed, gifted and supported by <a href="https://mxsstudio.edgentiq.com" target="_blank" rel="noopener noreferrer" className="hover:text-alta transition-colors border-b border-transparent hover:border-alta">MxS Studio</a> ❤️
+            </div>
         </div>
     </footer>
   );
