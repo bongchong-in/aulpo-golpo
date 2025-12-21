@@ -1,11 +1,14 @@
 import React from 'react';
-import content from '../content';
+import { useContent } from '../context/ContentContext';
 
 const Epilogue: React.FC = () => {
+  const { content } = useContent();
+
+  if (!content) return null;
   const { epilogue } = content;
 
   return (
-    <footer id="epilogue" className="py-24 relative overflow-hidden text-center">
+    <footer id="epilogue" className="py-16 md:py-24 relative overflow-hidden text-center">
         {/* Decoration */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-20 bg-ink opacity-20"></div>
 
@@ -27,7 +30,7 @@ const Epilogue: React.FC = () => {
                 </a>
             </div>
 
-            <div className="mt-20 opacity-40 text-xs tracking-widest">
+            <div className="mt-16 md:mt-20 opacity-40 text-xs tracking-widest">
                 {epilogue.copyright}<br />
                 <span className="font-bengali">{epilogue.bengaliFooter}</span>
             </div>

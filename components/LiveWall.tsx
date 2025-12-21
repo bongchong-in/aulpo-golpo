@@ -1,14 +1,17 @@
 import React from 'react';
-import content from '../content';
+import { useContent } from '../context/ContentContext';
 
 export default function LiveWall() {
+  const { content } = useContent();
+
+  if (!content) return null;
   const { liveWall } = content;
   const { items } = liveWall;
 
   return (
-    <section className="py-20 bg-stone-200/50 relative">
+    <section className="py-12 md:py-20 bg-stone-200/50 relative">
         <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10 md:mb-16">
                 <span className="font-hand text-3xl text-alta block mb-2">{liveWall.label}</span>
                 <h3 className="text-3xl font-serif tracking-wide">{liveWall.title}</h3>
             </div>

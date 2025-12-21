@@ -9,7 +9,7 @@ const StoryCard: React.FC<StoryCardProps> = ({ story }) => {
   const isRight = story.orientation === 'right';
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between mb-32 group relative">
+    <div className="flex flex-col md:flex-row items-center justify-between mb-16 md:mb-32 group relative">
         {/* Text Section */}
         {/* 
             Desktop Order Logic:

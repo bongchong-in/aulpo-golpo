@@ -1,10 +1,13 @@
 import React from 'react';
 import { useParallax } from '../hooks/useParallax';
-import content from '../content';
+import { useContent } from '../context/ContentContext';
 
 const Prologue: React.FC = () => {
   const offsetSlow = useParallax(0.05);
   const offsetFast = useParallax(0.1);
+  const { content } = useContent();
+
+  if (!content) return null;
   const { prologue } = content;
 
   return (
@@ -24,25 +27,24 @@ const Prologue: React.FC = () => {
              <div className="w-full h-full animate-float" style={{ animationDelay: '2s' }}></div>
         </div>
 
-        <div className="text-center z-10 relative max-w-2xl">
+        <div className="text-center z-10 relative max-w-2xl py-10 md:py-0">
             <p className="text-alta font-bengali text-2xl mb-4 tracking-widest opacity-80">{prologue.bengaliTitle}</p>
             <h1 className="text-6xl md:text-8xl font-light mb-6 tracking-tight leading-none text-ink">
                 {prologue.titlePart1} <span className="italic font-normal text-alta">{prologue.titlePart2}</span>
             </h1>
             <div className="h-[1px] w-24 bg-ink mx-auto my-6 opacity-30"></div>
-            <p className="text-xl md:text-2xl italic opacity-70 leading-relaxed font-light whitespace-pre-line">
+            <p className="text-xl md:text-2xl italic opacity-70 leading-relaxed font-light whitespace-pre-line relative z-20">
                 "{prologue.quote}"
             </p>
             
-            <div className="mt-12">
+            <div className="mt-12 relative z-20">
                 <a href="#chapters" className="text-xs uppercase tracking-[0.3em] border-b border-transparent hover:border-alta transition-all pb-1 cursor-pointer">{prologue.cta}</a>
             </div>
         </div>
         
-        {/* Hero Image 1 */}
+        {/* Hero Image 1 - Adjusted for Mobile Visibility */}
         <div 
-            className="hidden md:block absolute top-1/2 right-[10%] w-64 h-80 bg-white p-3 shadow-lg rotate-3 z-0 opacity-80 hover:opacity-100 transition-all duration-500 ease-out hover:scale-105 hover:rotate-0 hover:z-20 hover:shadow-2xl"
-            style={{ marginTop: '-10rem' }}
+            className="block absolute top-[65%] right-[-5%] w-40 h-52 -mt-12 md:top-1/2 md:right-[10%] md:w-64 md:h-80 md:-mt-40 bg-white p-2 md:p-3 shadow-lg rotate-6 md:rotate-3 z-0 opacity-60 md:opacity-80 hover:opacity-100 transition-all duration-500 ease-out hover:scale-105 hover:rotate-0 hover:z-20 hover:shadow-2xl"
         >
             <div className="w-full h-full overflow-hidden bg-gray-100">
                 <img 
@@ -52,12 +54,12 @@ const Prologue: React.FC = () => {
                   className="w-full h-full object-cover sepia-[.3]" 
                 />
             </div>
-            <p className="font-hand absolute -bottom-8 right-0 text-xl text-ink transform -rotate-2">{prologue.heroImage1.caption}</p>
+            <p className="font-hand absolute -bottom-8 right-0 text-xl text-ink transform -rotate-2 hidden md:block">{prologue.heroImage1.caption}</p>
         </div>
         
-        {/* Hero Image 2 */}
+        {/* Hero Image 2 - Adjusted for Mobile Visibility */}
         <div 
-            className="hidden md:block absolute top-[20%] left-[10%] w-48 h-60 bg-white p-3 shadow-lg -rotate-2 z-0 opacity-80 hover:opacity-100 transition-all duration-500 ease-out hover:scale-105 hover:rotate-0 hover:z-20 hover:shadow-2xl"
+            className="block absolute top-[5%] left-[-5%] w-32 h-40 md:top-[20%] md:left-[10%] md:w-48 md:h-60 bg-white p-2 md:p-3 shadow-lg -rotate-3 md:-rotate-2 z-0 opacity-60 md:opacity-80 hover:opacity-100 transition-all duration-500 ease-out hover:scale-105 hover:rotate-0 hover:z-20 hover:shadow-2xl"
         >
             <div className="w-full h-full overflow-hidden bg-gray-100">
                  <img 
